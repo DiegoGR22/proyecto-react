@@ -4,7 +4,7 @@ import './logo.css';
 const Logo = () => {
   return (
     <div>
-        <img src="../public/assets/img/LOGO P&B.png" alt="logo-pb" />
+        <img src="../public/assets/img/Sneak Heaven.png" alt="logo-sh" />
     </div>
   )
 }
