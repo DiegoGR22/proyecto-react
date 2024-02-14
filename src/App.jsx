@@ -13,7 +13,7 @@ function App() {
         <Route path='/' element={<>
           <Hero title="¡Bienvenido a SneakHeaven!"
             description="Descubre la mejor selección de zapatillas urbanas." />
-          <ItemListContainer greeting='¡Explora nuestra colección de sneakers y accesorios urbanos!' />
+          <ItemListContainer/>
         </>}
         />
 
