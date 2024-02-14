@@ -1,0 +1,92 @@
+[
+    {
+        "id": 1,
+        "brand": "Nike",
+        "model": "Air Force 1",
+        "color": "White",
+        "price": 100.00,
+        "image": "/assets/airforce1.png",
+        "description": "The Nike Air Force 1 '07 is a classic basketball shoe that features a timeless design."
+    },
+    {
+        "id": 2,
+        "brand": "Adidas",
+        "model": "Superstar",
+        "color": "Black",
+        "price": 90.00,
+        "image": "https://example.com/adidas-superstar-black.jpg",
+        "description": "The Adidas Superstar is a classic sneaker with a shell toe design and leather upper."
+    },
+    {
+        "id": 3,
+        "brand": "Converse",
+        "model": "Chuck Taylor All Star",
+        "color": "Red",
+        "price": 60.00,
+        "image": "https://example.com/converse-chuck-taylor-red.jpg",
+        "description": "The Converse Chuck Taylor All Star is a timeless sneaker known for its canvas upper and rubber sole."
+    },
+    {
+        "id": 4,
+        "brand": "New Balance",
+        "model": "574",
+        "color": "Navy Blue",
+        "price": 80.00,
+        "image": "https://example.com/new-balance-574-navy-blue.jpg",
+        "description": "The New Balance 574 is a versatile sneaker with a retro silhouette and durable construction."
+    },
+    {
+        "id": 5,
+        "brand": "Puma",
+        "model": "Suede Classic",
+        "color": "Grey",
+        "price": 70.00,
+        "image": "https://example.com/puma-suede-classic-grey.jpg",
+        "description": "The Puma Suede Classic is an iconic sneaker with a comfortable suede upper and rubber outsole."
+    },
+    {
+        "id": 6,
+        "brand": "Vans",
+        "model": "Old Skool",
+        "color": "Black/White",
+        "price": 65.00,
+        "image": "https://example.com/vans-old-skool-black-white.jpg",
+        "description": "The Vans Old Skool is a classic skate shoe with a low-top silhouette and durable canvas upper."
+    },
+    {
+        "id": 7,
+        "brand": "Reebok",
+        "model": "Club C 85",
+        "color": "White/Green",
+        "price": 75.00,
+        "image": "https://example.com/reebok-club-c-85-white-green.jpg",
+        "description": "The Reebok Club C 85 is a retro-inspired sneaker with a leather upper and EVA midsole for cushioning."
+    },
+    {
+        "id": 8,
+        "brand": "Under Armour",
+        "model": "UA HOVR™ Phantom 2",
+        "color": "Black/Red",
+        "price": 120.00,
+        "image": "https://example.com/under-armour-hovr-phantom-2-black-red.jpg",
+        "description": "The Under Armour UA HOVR™ Phantom 2 is a running shoe with a breathable upper and responsive cushioning."
+    },
+    {
+        "id": 9,
+        "brand": "ASICS",
+        "model": "GEL-Kayano 27",
+        "color": "Blue/Pink",
+        "price": 150.00,
+        "image": "https://example.com/asics-gel-kayano-27-blue-pink.jpg",
+        "description": "The ASICS GEL-Kayano 27 is a stability running shoe with advanced cushioning and support features."
+    },
+    {
+        "id": 10,
+        "brand": "Saucony",
+        "model": "Jazz Original",
+        "color": "Grey/White",
+        "price": 80.00,
+        "image": "https://example.com/saucony-jazz-original-grey-white.jpg",
+        "description": "The Saucony Jazz Original is a retro sneaker with a suede and nylon upper and shock-absorbing midsole."
+    }
+]
