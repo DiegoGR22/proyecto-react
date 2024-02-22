@@ -5,15 +5,33 @@ import Row from 'react-bootstrap/Row';
 // import Button from 'react-bootstrap/Button';
 import ProductosJSON from '../../db/productos.json';
 import ItemList from '../ItemList/ItemList';
+import { useParams } from 'react-router-dom';
 
 const ItemListContainer = () => {
     const [productos, setProductos] = useState([]);
+    const { categoryid } = useParams();
+
+    // useEffect(() => {
+    //     pedirDatos().then(data => {
+    //         setProductos(data);
+    //     });
+    // }, []);
 
     useEffect(() => {
-        pedirDatos().then(data => {
-            setProductos(data);
-        });
-    }, []);
+        if (!categoryid) {
+          pedirDatos()
+            .then((data) => {
+              setProductos(data);
+            })
+            .catch((err) => console.log(err))
+        } else {
+          filterCategory(categoryid)
+            .then((data) => {
+              setProductos(data);
+            })
+            .catch((err) => console.log(err))
+        }
+      }, [categoryid]);
 
     function pedirDatos() {
         return new Promise((resolve) => {
@@ -23,27 +41,19 @@ const ItemListContainer = () => {
         });
     }
 
+    function filterCategory (categoryid) {
+        return new Promise((resolve) => {
+          setTimeout(() => {
+            resolve(ProductosJSON.filter((productos) => productos.category === categoryid));
+          }, 2000);
+        });
+      };
+      
+
     return (
-        <Row xs={1} md={3} className="g-4 justify-content-center align-items-center">
-            {/* {productos.map(producto => (
-                <Col key={producto.id} className="col">
-                    <Card style={{ width: '20rem', overflow: 'hidden', margin: '0' }}>
-                        <Card.Img variant="top" src={producto.image} style={{ width: '100%' }} />
-                        <Card.Body>
-                            <Card.Title>{producto.model}</Card.Title>
-                            <Card.Text>{producto.description}</Card.Text>
-                            <Button variant="primary">Ver detalles</Button>
-                        </Card.Body>
-                    </Card>
-                </Col>
-            ))} */}
             <ItemList productos={productos}/>
-        </Row>
     );
-    
-    // return (
-    //         <ItemList productos={productos}/>
-    // );
+
 };
 
 export default ItemListContainer;

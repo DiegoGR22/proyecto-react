@@ -1,8 +1,15 @@
 /* eslint-disable react/prop-types */
 import { useState } from 'react';
+import Button from 'react-bootstrap/Button';
 
-const ItemCount = ({ initial, stock, onAdd }) => {
-    const [count, setCount] = useState(initial);
+const ItemCount = ({ initial, stock }) => {
+    let [count, setCount] = useState(1);
+
+    const handleDecrement = () => {
+        if (count > initial) {
+            setCount(count - 1);
+        }
+    };
 
     const handleIncrement = () => {
         if (count < stock) {
@@ -10,22 +17,17 @@ const ItemCount = ({ initial, stock, onAdd }) => {
         }
     };
 
-    const handleDecrement = () => {
-        if (count > 1) {
-            setCount(count - 1);
-        }
-    };
-
-    const handleAdd = () => {
-        onAdd(count);
+    const onAdd = () => {
+        setCount(count);
+        console.log(`Agregaste ${count} items al carrito`);
     };
 
     return (
         <div>
-            <button onClick={handleDecrement}>-</button>
-            <span>{count}</span>
-            <button onClick={handleIncrement}>+</button>
-            <button onClick={handleAdd}>Agregar al carrito</button>
+            <Button variant='secondary' onClick={handleDecrement}>-</Button>{' '}
+            <span>{count}</span>{' '}
+            <Button variant='secondary' onClick={handleIncrement}>+</Button>{' '}
+            <Button variant='secondary' onClick={onAdd}>Agregar al carrito</Button>{' '}
         </div>
     );
 };

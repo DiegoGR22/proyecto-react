@@ -4,7 +4,6 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Logo from '../Logo/logo';
 import Cart from '../Cart/Cart';
-import Contador from '../ItemCount/ItemCount';
 import { Link, NavLink } from 'react-router-dom';
 
 function NavBar() {
@@ -27,7 +26,7 @@ function NavBar() {
           </Nav>
           <Nav>
             <NavLink to={"/cart/"} className={"nav-link"}><Cart /></NavLink>
-            <NavLink to="/cart/" className={"nav-link"}><Contador /></NavLink>
+            <NavLink to="/cart/" className={"nav-link"}></NavLink>
           </Nav>
         </Navbar.Collapse>
       </Container>
