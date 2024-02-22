@@ -19,19 +19,19 @@ const ItemListContainer = () => {
 
     useEffect(() => {
         if (!categoryid) {
-          pedirDatos()
-            .then((data) => {
-              setProductos(data);
-            })
-            .catch((err) => console.log(err))
+            pedirDatos()
+                .then((data) => {
+                    setProductos(data);
+                })
+                .catch((err) => console.log(err))
         } else {
-          filterCategory(categoryid)
-            .then((data) => {
-              setProductos(data);
-            })
-            .catch((err) => console.log(err))
+            filterCategory(categoryid)
+                .then((data) => {
+                    setProductos(data);
+                })
+                .catch((err) => console.log(err))
         }
-      }, [categoryid]);
+    }, [categoryid]);
 
     function pedirDatos() {
         return new Promise((resolve) => {
@@ -41,17 +41,17 @@ const ItemListContainer = () => {
         });
     }
 
-    function filterCategory (categoryid) {
+    function filterCategory(categoryid) {
         return new Promise((resolve) => {
-          setTimeout(() => {
-            resolve(ProductosJSON.filter((productos) => productos.category === categoryid));
-          }, 2000);
+            setTimeout(() => {
+                resolve(ProductosJSON.filter((productos) => productos.category === categoryid));
+            }, 2000);
         });
-      };
-      
+    };
+
 
     return (
-            <ItemList productos={productos}/>
+        <ItemList productos={productos} />
     );
 
 };
