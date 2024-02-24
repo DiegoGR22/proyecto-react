@@ -9,23 +9,26 @@ import { useParams } from 'react-router-dom';
 
 const ItemListContainer = () => {
     const [productos, setProductos] = useState([]);
-    const { categoryid } = useParams();
+    const [loading, setLoading] = useState(true);
+    const { category } = useParams();
 
     useEffect(() => {
-        if (!categoryid) {
+        if (!category) {
             pedirDatos()
                 .then((data) => {
                     setProductos(data);
                 })
                 .catch((err) => console.log(err))
+                .finally(() => setLoading(false))
         } else {
-            filterCategory(categoryid)
+            filterCategory(category)
                 .then((data) => {
                     setProductos(data);
                 })
                 .catch((err) => console.log(err))
+                .finally(() => setLoading(false))
         }
-    }, [categoryid]);
+    }, [category]);
 
     function pedirDatos() {
         return new Promise((resolve) => {
@@ -35,18 +38,22 @@ const ItemListContainer = () => {
         });
     }
 
-    function filterCategory(categoryid) {
+    function filterCategory(category = "new") {
         return new Promise((resolve) => {
             setTimeout(() => {
-                resolve(ProductosJSON.filter((productos) => productos.category === categoryid));
+                resolve(ProductosJSON.filter((producto) => producto.category === category));
             }, 2000);
         });
     }
 
     return (
-        <ItemList productos={productos} />
+        <>
+        {
+            loading ? <p>Loading...</p> :
+            < ItemList productos = { productos } />
+        }
+        </>
     );
-
 };
 
 export default ItemListContainer;
