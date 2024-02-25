@@ -4,28 +4,31 @@ import ProductosJSON from '../../db/productos.json';
 import ItemDetail from '../ItemDetail/ItemDetail';
 
 const ItemDetailContainer = () => {
-    const [producto, setProducto] = useState(null);
+    const [prod, setProd] = useState(null);
     const { id } = useParams();
 
     useEffect(() => {
-        getProducto(id)
-            .then((res) => {
-                setProducto(res);
+        getProd(id)
+            .then((data) => {
+                setProd(data);
             })
-    },[id]);
+            .catch((err) => console.log(err));
+    }, [id]);
 
-    function getProducto(id) {
+    function getProd(id) {
         return new Promise((resolve) => {
             setTimeout(() => {
-                resolve(ProductosJSON.find((producto) => producto.id === id));
+                resolve(ProductosJSON.map((prod) => prod.id === id));
             }, 2000);
         })
     }
 
     return (
-        <div>
-            {producto !== null ? <ItemDetail producto={producto} /> : <p>Loading...</p>}
-        </div>
+        <>
+            {prod !== null ?
+                <ItemDetail prod={prod} />
+                : <p>Loading...</p>}
+        </>
     );
 }
 

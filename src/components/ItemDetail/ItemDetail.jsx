@@ -8,16 +8,14 @@ import CardImg from 'react-bootstrap/esm/CardImg';
 import Image from 'react-bootstrap/Image';
 import { useState } from 'react';
 
-const ItemDetail = ({ producto }) => {
+const ItemDetail = ({ prod }) => {
 
     return (
         <Card className="text-center">
             <Card.Header>a</Card.Header>
             <Card.Body>
                 <Card.Title>hola</Card.Title>
-                <Card.Text>
-                    producto.model
-                </Card.Text>
+                <Card.Text>{prod.model}</Card.Text>
                 <Image style={{width:"10px"}} src='image' fluid/>
                 <ItemCount stock={7} initial={1}/>
             </Card.Body>

@@ -1,8 +1,4 @@
 import { useEffect, useState } from 'react';
-// import Row from 'react-bootstrap/Row';
-// import Col from 'react-bootstrap/Col';
-// import Card from 'react-bootstrap/Card';
-// import Button from 'react-bootstrap/Button';
 import ProductosJSON from '../../db/productos.json';
 import ItemList from '../ItemList/ItemList';
 import { useParams } from 'react-router-dom';
@@ -39,7 +35,7 @@ const ItemListContainer = () => {
     }
 
     function filterCategory(category = "new") {
-        return new Promise((resolve) => {
+        return new Promise((resolve) =>  {
             setTimeout(() => {
                 resolve(ProductosJSON.filter((producto) => producto.category === category));
             }, 2000);
@@ -48,10 +44,10 @@ const ItemListContainer = () => {
 
     return (
         <>
-        {
-            loading ? <p>Loading...</p> :
-            < ItemList productos = { productos } />
-        }
+            {
+                loading ? <p>Loading...</p> :
+                    < ItemList productos={productos} />
+            }
         </>
     );
 };

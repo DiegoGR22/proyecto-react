@@ -15,7 +15,7 @@ function NavBar() {
             <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mx-auto fs-3 w-100 d-flex justify-content-evenly">
             <NavLink to="/" className={"nav-link"}>Home</NavLink>
-            <NavLink to="/nuevos-lanzamientos/" className={"nav-link"}>Nuevos Lanzamientos</NavLink>
+            <NavLink to="/nuevos-lanzamientos/new" className={"nav-link"}>Nuevos Lanzamientos</NavLink>
             <NavDropdown title="Catálogo" id="basic-nav-dropdown">
               <NavLink to={"/catalogo/marcas"} className='fs-5 dropdown-item'>Marcas</NavLink>
               <NavLink to={"/catalogo/accesorios"} className='fs-5 dropdown-item'>Accesorios</NavLink>

@@ -18,7 +18,7 @@
         "price": 90.00,
         "image": "../../../public/assets/img/superstar.png",
         "description": "The Adidas Superstar is a classic sneaker with a shell toe design and leather upper.",
-        "category": "",
+        "category": "old",
         "stock" : 7
     },
     {
@@ -51,7 +51,7 @@
         "price": 70.00,
         "image": "../../../public/assets/img/puma.jpg.avif",
         "description": "The Puma Suede Classic is an iconic sneaker with a comfortable suede upper and rubber outsole.",
-        "category": "",
+        "category": "old",
         "stock" : 7
     },
     {
@@ -62,7 +62,7 @@
         "price": 65.00,
         "image": "../../../public/assets/img/vans.jpg",
         "description": "The Vans Old Skool is a classic skate shoe with a low-top silhouette and durable canvas upper.",
-        "category": "",
+        "category": "old",
         "stock" : 7
     },
     {
@@ -84,7 +84,7 @@
         "price": 120.00,
         "image": "../../../public/assets/img/under-armour.webp",
         "description": "The Under Armour UA HOVR™ Phantom 2 is a running shoe with a breathable upper and responsive cushioning.",
-        "category": "",
+        "category": "old",
         "stock" : 7
     },
     {
@@ -106,7 +106,7 @@
         "price": 80.00,
         "image": "../../../public/assets/img/jazz.jpg",
         "description": "The Saucony Jazz Original is a retro sneaker with a suede and nylon upper and shock-absorbing midsole.",
-        "category": "",
+        "category": "old",
         "stock" : 7
     }
 ]
