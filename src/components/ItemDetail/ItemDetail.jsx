@@ -1,12 +1,12 @@
 /* eslint-disable react/prop-types */
 // import React from 'react';
 
-import Button from 'react-bootstrap/Button';
+// import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import ItemCount from "../ItemCount/ItemCount";
-import CardImg from 'react-bootstrap/esm/CardImg';
+// import CardImg from 'react-bootstrap/esm/CardImg';
 import Image from 'react-bootstrap/Image';
-import { useState } from 'react';
+// import { useState } from 'react';
 
 const ItemDetail = ({ item }) => {
 

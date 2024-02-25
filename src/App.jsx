@@ -3,6 +3,7 @@ import NavBar from './components/NavBar/NavBar';
 import Hero from './components/Hero/Hero';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
+import CartContainer from './components/Cart/CartContainer';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         </>}/>
         <Route path="/item/:id" element={<ItemDetailContainer />} />
         <Route path='/nuevos-lanzamientos/:category' element={<ItemListContainer />}/>
+        <Route path='/cart/' element={<CartContainer />}/>
       </Routes>
     </BrowserRouter>
   )
