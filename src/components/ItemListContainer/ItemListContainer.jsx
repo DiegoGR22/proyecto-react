@@ -35,7 +35,7 @@ const ItemListContainer = () => {
     }
 
     function filterCategory(category = "new") {
-        return new Promise((resolve) =>  {
+        return new Promise((resolve) => {
             setTimeout(() => {
                 resolve(ProductosJSON.filter((producto) => producto.category === category));
             }, 2000);
