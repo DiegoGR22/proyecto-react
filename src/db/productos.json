@@ -5,7 +5,7 @@
         "model": "Air Force 1",
         "color": "White",
         "price": 100.00,
-        "image": "../../../public/assets/img/airforce1.png",
+        "image": "/assets/img/airforce1.png",
         "description": "The Nike Air Force 1 '07 is a classic basketball shoe that features a timeless design.",
         "category": "new",
         "stock" : 7
