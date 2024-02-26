@@ -16,7 +16,7 @@
         "model": "Superstar",
         "color": "Black",
         "price": 90.00,
-        "image": "../../../public/assets/img/superstar.png",
+        "image": "/assets/img/superstar.png",
         "description": "The Adidas Superstar is a classic sneaker with a shell toe design and leather upper.",
         "category": "old",
         "stock" : 7
@@ -27,7 +27,7 @@
         "model": "Chuck Taylor All Star",
         "color": "Red",
         "price": 60.00,
-        "image": "../../../public/assets/img/converse.png",
+        "image": "/assets/img/converse.png",
         "description": "The Converse Chuck Taylor All Star is a timeless sneaker known for its canvas upper and rubber sole.",
         "category": "new",
         "stock" : 7
@@ -38,7 +38,7 @@
         "model": "574",
         "color": "Navy Blue",
         "price": 80.00,
-        "image": "../../../public/assets/img/new-balance.jpg.webp",
+        "image": "/assets/img/new-balance.jpg.webp",
         "description": "The New Balance 574 is a versatile sneaker with a retro silhouette and durable construction.",
         "category": "new",
         "stock" : 7
@@ -49,7 +49,7 @@
         "model": "Suede Classic",
         "color": "Grey",
         "price": 70.00,
-        "image": "../../../public/assets/img/puma.jpg.avif",
+        "image": "/assets/img/puma.jpg.avif",
         "description": "The Puma Suede Classic is an iconic sneaker with a comfortable suede upper and rubber outsole.",
         "category": "old",
         "stock" : 7
@@ -60,7 +60,7 @@
         "model": "Old Skool",
         "color": "Black/White",
         "price": 65.00,
-        "image": "../../../public/assets/img/vans.jpg",
+        "image": "/assets/img/vans.jpg",
         "description": "The Vans Old Skool is a classic skate shoe with a low-top silhouette and durable canvas upper.",
         "category": "old",
         "stock" : 7
@@ -71,7 +71,7 @@
         "model": "Club C 85",
         "color": "White/Green",
         "price": 75.00,
-        "image": "../../../public/assets/img/reebok.jpg",
+        "image": "/assets/img/reebok.jpg",
         "description": "The Reebok Club C 85 is a retro-inspired sneaker with a leather upper and EVA midsole for cushioning.",
         "category": "new",
         "stock" : 7
@@ -82,7 +82,7 @@
         "model": "UA HOVR™ Phantom 2",
         "color": "Black/Red",
         "price": 120.00,
-        "image": "../../../public/assets/img/under-armour.webp",
+        "image": "/assets/img/under-armour.webp",
         "description": "The Under Armour UA HOVR™ Phantom 2 is a running shoe with a breathable upper and responsive cushioning.",
         "category": "old",
         "stock" : 7
@@ -93,7 +93,7 @@
         "model": "GEL-Kayano 27",
         "color": "Blue/Pink",
         "price": 150.00,
-        "image": "../../../public/assets/img/asics.jpg.webp",
+        "image": "/assets/img/asics.jpg.webp",
         "description": "The ASICS GEL-Kayano 27 is a stability running shoe with advanced cushioning and support features.",
         "category": "new",
         "stock" : 7
@@ -104,7 +104,7 @@
         "model": "Jazz Original",
         "color": "Grey/White",
         "price": 80.00,
-        "image": "../../../public/assets/img/jazz.jpg",
+        "image": "/assets/img/jazz.jpg",
         "description": "The Saucony Jazz Original is a retro sneaker with a suede and nylon upper and shock-absorbing midsole.",
         "category": "old",
         "stock" : 7
