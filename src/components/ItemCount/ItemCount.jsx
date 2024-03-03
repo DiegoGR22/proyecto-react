@@ -1,9 +1,8 @@
 /* eslint-disable react/prop-types */
 import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
-import { Link } from 'react-router-dom';
 
-const ItemCount = ({ initial, stock }) => {
+const ItemCount = ({ initial, stock, onAdd }) => {
     let [count, setCount] = useState(1);
 
     const handleDecrement = () => {
@@ -18,19 +17,17 @@ const ItemCount = ({ initial, stock }) => {
         }
     };
 
-    const onAdd = () => {
-        setCount(count);
-        console.log(`Agregaste ${count} items al carrito`);
-    };
+    // const onAdd = () => {
+    //     setCount(count);
+    //     console.log(`Agregaste ${count} items al carrito`);
+    // };
 
     return (
         <div>
             <Button variant='secondary' onClick={handleDecrement}>-</Button>{' '}
             <span>{count}</span>{' '}
             <Button variant='secondary' onClick={handleIncrement}>+</Button>{' '}
-            <Link to="/cart/">
-                <Button variant='secondary' onClick={onAdd}>Agregar al carrito</Button>{' '}
-            </Link>
+            <Button variant='secondary' onClick={onAdd}>Agregar al carrito</Button>{' '}
         </div>
     );
 };
