@@ -17,11 +17,6 @@ const ItemCount = ({ initial, stock, onAdd }) => {
         }
     };
 
-    // const onAdd = () => {
-    //     setCount(count);
-    //     console.log(`Agregaste ${count} items al carrito`);
-    // };
-
     return (
         <div>
             <Button variant='secondary' onClick={handleDecrement}>-</Button>{' '}

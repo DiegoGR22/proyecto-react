@@ -2,7 +2,7 @@
 /* eslint-disable react/prop-types */
 // import React from 'react';
 
-// import Button from 'react-bootstrap/Button';
+import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import ItemCount from "../ItemCount/ItemCount";
 // import CardImg from 'react-bootstrap/esm/CardImg';
@@ -16,9 +16,9 @@ const ItemDetail = ({ item }) => {
     const [isAdded, setIsAdded] = useState(false);
 
     const onAdd = (quantity) => {
-        console.log(`Agregaste ${quantity} items al carrito.`);
         setItemCount(quantity);
         setIsAdded(true);
+        console.log(`Agregaste ${quantity} items al carrito.`);
     }
 
     return (
@@ -33,10 +33,10 @@ const ItemDetail = ({ item }) => {
                         isAdded ?
                             <div>
                                 <Link to={"/"}>
-                                <button>Seguir comprando</button>
+                                    <Button variant='secondary'>Seguir comprando</Button>{' '}
                                 </Link>
                                 <Link to="/cart/">
-                                    <button>Finalizar compra</button>
+                                    <Button variant='secondary'>Finalizar Compra</Button>{' '}
                                 </Link>
                             </div>
                             : <ItemCount stock={item.stock} initial={1} onAdd={onAdd} />
