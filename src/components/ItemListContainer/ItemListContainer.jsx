@@ -39,12 +39,9 @@ const ItemListContainer = () => {
         if (!category) {
             pedirDatosFirestore()
         } else {
-            filterCategory(category)
-                .then((data) => {
-                    setProductos(data);
-                })
-                .catch((err) => console.log(err))
-                .finally(() => setLoading(false))
+            setTimeout(() => {
+                filterCategoryFirestore(category);
+            }, 1000);
         }
     }, [category]);
 
@@ -77,12 +74,28 @@ const ItemListContainer = () => {
     //     })
     // },[category]);
 
-    function filterCategory(category = "new") {
-        return new Promise((resolve) => {
-            setTimeout(() => {
-                resolve(ProductosJSON.filter((producto) => producto.category === category));
-            }, 2000);
-        });
+    // function filterCategory(category = "new") {
+    //     return new Promise((resolve) => {
+    //         setTimeout(() => {
+    //             resolve(ProductosJSON.filter((producto) => producto.category === category));
+    //         }, 2000);
+    //     });
+    // }
+
+    function filterCategoryFirestore(category = "new") {
+        const db = getFirestore();
+
+        // const productoRef = query(collection(db, "productos"), orderBy("id", "asc"), where("category", "==", category));
+        const productoRef = query(collection(db, "productos") , where("category", "==", category));
+
+        getDocs(productoRef).then((collection) => {
+            const productos = collection.docs.map((doc) => {
+                return doc.data();
+            })
+            console.log(productos);
+            setProductos(productos);
+        })
+        .finally(() => setLoading(false))
     }
 
     return (
