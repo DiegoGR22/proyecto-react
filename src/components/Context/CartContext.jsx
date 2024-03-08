@@ -8,9 +8,8 @@ const CartProvider = ({ children }) => {
     const [cart, setCart] = useState([])
 
     function addItem(item, quantity) {
-
         const itemAgregado = {...item, quantity}
-        
+        console.log(itemAgregado)
         setCart([...cart, itemAgregado])
     }
     

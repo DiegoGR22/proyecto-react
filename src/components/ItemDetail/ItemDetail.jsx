@@ -15,7 +15,7 @@ const ItemDetail = ({ item }) => {
 
     const { cart, addItem } = useContext(CartContext);
 
-    const [itemCount, setItemCount] = useState(0);
+    const [itemCount, setItemCount] = useState(1);
     const [isAdded, setIsAdded] = useState(false);
 
     const onAdd = (quantity) => {
@@ -42,7 +42,7 @@ const ItemDetail = ({ item }) => {
                                     <Button variant='secondary'>Finalizar Compra</Button>{' '}
                                 </Link>
                             </div>
-                            : <ItemCount stock={item.stock} initial={1} onAdd={onAdd} addItem={() => addItem(item, itemCount)}/>
+                            : <ItemCount stock={item.stock} initial={1} item={item} onAdd={onAdd}/>
                     }
                 </Card.Body>
                 <Card.Footer className="text-muted">2 days ago</Card.Footer>

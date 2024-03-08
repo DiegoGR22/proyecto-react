@@ -4,11 +4,11 @@ import Button from 'react-bootstrap/Button';
 import { useContext } from 'react';
 import { CartContext } from '../Context/CartContext';
 
-const ItemCount = ({ initial, stock, addItem, onAdd, ItemCount }) => {
+const ItemCount = ({ initial, stock, item, onAdd}) => {
 
-    // const { addItem } = useContext(CartContext);
+    const { addItem } = useContext(CartContext);
 
-    let [count, setCount] = useState(1);
+    let [count, setCount] = useState(initial);
 
     const handleDecrement = () => {
         if (count > initial) {
@@ -24,6 +24,7 @@ const ItemCount = ({ initial, stock, addItem, onAdd, ItemCount }) => {
 
     const handleOnAdd = () => {
         onAdd(count)
+        addItem(item, count);
     }
 
     return (
@@ -31,7 +32,8 @@ const ItemCount = ({ initial, stock, addItem, onAdd, ItemCount }) => {
             <Button variant='secondary' onClick={handleDecrement}>-</Button>{' '}
             <span>{count}</span>{' '}
             <Button variant='secondary' onClick={handleIncrement}>+</Button>{' '}
-            <Button variant='secondary' onClick={addItem}>Agregar al carrito</Button>{' '}
+            <Button variant='secondary' onClick={handleOnAdd}>Agregar al carrito</Button>{' '}
+            {/* <Button variant='secondary' onClick={() => { addItem(item, quantity); handleOnAdd()}}>Agregar al carrito</Button>{' '} */}
         </div>
     );
 };

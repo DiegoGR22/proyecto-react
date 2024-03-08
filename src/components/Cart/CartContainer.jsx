@@ -7,22 +7,24 @@ const CartContainer = () => {
 
     const { cart, totalPrice, clearAll } = useContext(CartContext);
 
+    console.log(cart)
+
     return (
         <>
             {
-                cart.map((prod) => (
-                    <div key={prod.id}>
-                        <h3>{prod.model}</h3>
-                        <p>Precio unitario: $ {prod.price}</p>
-                        <p>Cantidad: {prod.cantidad}</p>
-                        <p>Precio Total : $ {prod.price * prod.cantidad}</p>
+                cart.map((item) => (
+                    <div key={item.id}>
+                        <h3>{item.brand} {item.model}</h3>
+                        <p>Precio unitario: $ {item.price}</p>
+                        <p>Cantidad: {item.quantity}</p>
+                        <p>Precio Total : ${item.price * item.quantity}</p>
                     </div>
                 ))
             }
             {
                 cart.length > 0 ?
                     <>
-                        <p>Precio: 90</p>
+                        <p>Precio: {totalPrice}</p>
                         <div>
                             <button onClick={clearAll}>vaciar carro</button>
                         </div>
