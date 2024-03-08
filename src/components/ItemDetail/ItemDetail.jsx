@@ -7,10 +7,13 @@ import Card from 'react-bootstrap/Card';
 import ItemCount from "../ItemCount/ItemCount";
 // import CardImg from 'react-bootstrap/esm/CardImg';
 import Image from 'react-bootstrap/Image';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { CartContext } from '../Context/CartContext';
 
 const ItemDetail = ({ item }) => {
+
+    const { cart, addItem } = useContext(CartContext);
 
     const [itemCount, setItemCount] = useState(0);
     const [isAdded, setIsAdded] = useState(false);
@@ -39,7 +42,7 @@ const ItemDetail = ({ item }) => {
                                     <Button variant='secondary'>Finalizar Compra</Button>{' '}
                                 </Link>
                             </div>
-                            : <ItemCount stock={item.stock} initial={1} onAdd={onAdd} />
+                            : <ItemCount stock={item.stock} initial={1} onAdd={onAdd} addItem={() => addItem(item, itemCount)}/>
                     }
                 </Card.Body>
                 <Card.Footer className="text-muted">2 days ago</Card.Footer>
