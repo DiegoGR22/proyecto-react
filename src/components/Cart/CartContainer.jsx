@@ -5,7 +5,11 @@ import ItemDetailContainer from "../ItemDetailContainer/ItemDetailContainer"
 
 const CartContainer = () => {
 
-    const { cart, totalPrice, clearAll } = useContext(CartContext);
+    const { cart, clearAll } = useContext(CartContext);
+
+    const totalPrice = cart.reduce((total, item) => {
+        return total + (item.price * item.quantity);
+    }, 0);
 
     return (
         <>
@@ -22,7 +26,7 @@ const CartContainer = () => {
             {
                 cart.length > 0 ?
                     <>
-                        <p>Precio: {totalPrice}</p>
+                        <p>Precio: ${totalPrice}</p>
                         <div>
                             <button onClick={clearAll}>vaciar carro</button>
                         </div>
