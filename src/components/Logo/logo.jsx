@@ -1,6 +1,6 @@
 // import React from 'react'
 import './logo.css';
-import SneakHeavenLogo from '../../../public/assets/img/SneakHeaven.png';
+import SneakHeavenLogo from '/assets/img/SneakHeaven.png';
 
 const Logo = () => {
   return (
