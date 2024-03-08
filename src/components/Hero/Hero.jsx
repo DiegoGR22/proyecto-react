@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import './Hero.css';
-import Wallpaper from '../../../public/assets/img/Sneakers-Wallpaper.jpg';
+import Wallpaper from '/assets/img/Sneakers-Wallpaper.jpg';
 
 const Hero = ({ title, description }) => {
     return (
