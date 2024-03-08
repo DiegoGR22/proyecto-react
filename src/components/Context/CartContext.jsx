@@ -40,7 +40,7 @@ const CartProvider = ({ children }) => {
     }
 
     function totalPrice() {
-        return cart.reduce((acc, item) => acc + (item.price * item.quantity));
+        return cart.reduce((acc, item) => {acc + (item.price * item.quantity)},0);
     } 
     
 

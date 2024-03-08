@@ -7,8 +7,6 @@ const CartContainer = () => {
 
     const { cart, totalPrice, clearAll } = useContext(CartContext);
 
-    console.log(cart)
-
     return (
         <>
             {
@@ -24,7 +22,7 @@ const CartContainer = () => {
             {
                 cart.length > 0 ?
                     <>
-                        <p>Precio: {totalPrice()}</p>
+                        <p>Precio: {totalPrice}</p>
                         <div>
                             <button onClick={clearAll}>vaciar carro</button>
                         </div>
