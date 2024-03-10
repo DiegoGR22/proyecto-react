@@ -1,7 +1,7 @@
 // import React from 'react'
 import { useContext } from "react"
 import { CartContext } from "../Context/CartContext"
-import ItemDetailContainer from "../ItemDetailContainer/ItemDetailContainer"
+import { Button } from "react-bootstrap";
 
 const CartContainer = () => {
 
@@ -17,6 +17,7 @@ const CartContainer = () => {
                 cart.map((item) => (
                     <div key={item.id}>
                         <h3>{item.brand} {item.model}</h3>
+                        {/* <img src={item.image} alt="" /> */}
                         <p>Precio unitario: $ {item.price}</p>
                         <p>Cantidad: {item.quantity}</p>
                         <p>Subtotal: ${item.price * item.quantity}</p>
@@ -26,9 +27,9 @@ const CartContainer = () => {
             {
                 cart.length > 0 ?
                     <>
-                        <p>Precio: ${totalPrice}</p>
+                        <strong>Precio Total: ${totalPrice}</strong>
                         <div>
-                            <button onClick={clearAll}>vaciar carro</button>
+                            <Button onClick={clearAll}>vaciar carro</Button>
                         </div>
                     </>
                     : <b>Carrito vacio</b>
