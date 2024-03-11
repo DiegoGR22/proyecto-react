@@ -1,7 +1,8 @@
 // import React from 'react'
-import { useContext } from "react"
-import { CartContext } from "../Context/CartContext"
+import { useContext } from "react";
+import { CartContext } from "../Context/CartContext";
 import { Button } from "react-bootstrap";
+import Checkout from "../Checkout/Checkout";
 
 const CartContainer = () => {
 
@@ -30,6 +31,7 @@ const CartContainer = () => {
                         <strong>Precio Total: ${totalPrice}</strong>
                         <div>
                             <Button onClick={clearAll}>vaciar carro</Button>
+                            <Checkout />
                         </div>
                     </>
                     : <b>Carrito vacio</b>
