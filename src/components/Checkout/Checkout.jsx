@@ -1,4 +1,4 @@
-import { collection, getFirestore, addDoc } from 'firebase/firestore';
+import { collection, getFirestore, addDoc, serverTimestamp } from 'firebase/firestore';
 import Button from 'react-bootstrap/esm/Button';
 import { useForm } from 'react-hook-form';
 import { useContext, useState } from 'react';
@@ -33,6 +33,7 @@ const Checkout = () => {
             },
             items: cart,
             total: totalPrice,
+            date: serverTimestamp(),
         }
 
         const db = getFirestore()
