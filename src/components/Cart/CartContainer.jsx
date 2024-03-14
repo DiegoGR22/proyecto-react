@@ -2,15 +2,15 @@
 import { useContext } from "react";
 import { CartContext } from "../Context/CartContext";
 import { Button } from "react-bootstrap";
-import Checkout from "../Checkout/Checkout";
+import { Link } from "react-router-dom";
 
 const CartContainer = () => {
 
-    const { cart, clearAll } = useContext(CartContext);
+    const { cart, clearAll, totalPrice } = useContext(CartContext);
 
-    const totalPrice = cart.reduce((total, item) => {
-        return total + (item.price * item.quantity);
-    }, 0);
+    // const totalPrice = cart.reduce((total, item) => {
+    //     return total + (item.price * item.quantity);
+    // }, 0);
 
     return (
         <>
@@ -31,7 +31,10 @@ const CartContainer = () => {
                         <strong>Precio Total: ${totalPrice}</strong>
                         <div>
                             <Button onClick={clearAll}>vaciar carro</Button>
-                            <Checkout />
+                            {/* <Checkout /> */}
+                            <Button>
+                                <Link to="/cart/checkout">Finaliza tu compra</Link>
+                            </Button>
                         </div>
                     </>
                     : <b>Carrito vacio</b>
