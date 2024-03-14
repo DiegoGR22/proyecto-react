@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 const CartContainer = () => {
 
-    const { cart, clearAll, totalPrice } = useContext(CartContext);
+    const { cart, clearAll, totalPrice, removeItem } = useContext(CartContext);
 
     // const totalPrice = cart.reduce((total, item) => {
     //     return total + (item.price * item.quantity);
@@ -22,6 +22,7 @@ const CartContainer = () => {
                         <p>Precio unitario: $ {item.price}</p>
                         <p>Cantidad: {item.quantity}</p>
                         <p>Subtotal: ${item.price * item.quantity}</p>
+                        <Button onClick={() => removeItem(item.id)}>Quitar</Button>
                     </div>
                 ))
             }
@@ -37,7 +38,12 @@ const CartContainer = () => {
                             </Button>
                         </div>
                     </>
-                    : <b>Carrito vacio</b>
+                    : <>
+                        <b>Carrito vacio</b>
+                        <Button>
+                            <Link to={"/"}>Volver al Inicio</Link>
+                        </Button>
+                    </>
             }
         </>
     )
