@@ -3,6 +3,7 @@ import Button from 'react-bootstrap/esm/Button';
 import { useForm } from 'react-hook-form';
 import { useContext, useState } from 'react';
 import { CartContext } from '../Context/CartContext';
+import { Link } from 'react-router-dom';
 
 const Checkout = () => {
 
@@ -13,19 +14,6 @@ const Checkout = () => {
 
     function createOrder(data) {
         const order = {
-            // buyer: {
-            //     name: 'Meg',
-            //     email: 'john@example',
-            //     phone: '123-456'
-            // },
-            // items: [
-            //     {
-            //         id: '2',
-            //         model: 'Dunk Low',
-            //         price: 300
-            //     }
-            // ],
-            // total: 300
             buyer: {
                 name: data.name,
                 email: data.email,
@@ -57,10 +45,14 @@ const Checkout = () => {
                     <div className='containerCheckout'>
                         <h2>Gracias por tu compra!</h2>
                         <p>Tu numero de orden es: {orderId}</p>
+                        <Button>
+                            <Link to={"/"}>Volver a la Tienda</Link>
+                        </Button>
                     </div>
 
-
-                    : <div className='containerCheckout'>
+                    : 
+                    
+                    <div className='containerCheckout'>
 
                         <h1>Finalizar Compra</h1>
                         <form onSubmit={handleSubmit(createOrder)} className='containerForm'>
