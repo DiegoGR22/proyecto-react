@@ -10,18 +10,21 @@ import Image from 'react-bootstrap/Image';
 import { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { CartContext } from '../Context/CartContext';
+import { useNavigate } from 'react-router-dom';
 
-const ItemDetail = ({ item }) => {
+const ItemDetail = ({ item, history }) => {
 
     const { cart, addItem } = useContext(CartContext);
 
     const [itemCount, setItemCount] = useState(1);
     const [isAdded, setIsAdded] = useState(false);
+    const navigate = useNavigate();
 
     const onAdd = (quantity) => {
         setItemCount(quantity);
         setIsAdded(true);
         console.log(`Agregaste ${quantity} items al carrito.`);
+        navigate(`/cart/?quantity=${quantity}`);
     }
 
     return (

@@ -43,9 +43,17 @@ const CartProvider = ({ children }) => {
         return total + (item.price * item.quantity);
     }, 0);
 
+    const updateCantCart = (quantity, item) => {
+        const newCart = cart.map(cartItem =>
+            cartItem.id === item.id ? { ...cartItem, quantity } : cartItem
+        );
+        setCart(newCart);
+    };
+    
+
     return (
         <>
-            <CartContext.Provider value={{cart, addItem, removeItem, clearAll, isInCart, cartQuantity, totalPrice}}>{children}</CartContext.Provider>
+            <CartContext.Provider value={{cart, addItem, removeItem, clearAll, isInCart, cartQuantity, totalPrice, updateCantCart}}>{children}</CartContext.Provider>
         </>
     )
 }
