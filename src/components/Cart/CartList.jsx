@@ -4,7 +4,7 @@ import { useContext, useState } from "react";
 import { CartContext } from "../Context/CartContext";
 import { Button } from "react-bootstrap";
 
-const CartPrueba = ({ item }) => {
+const CartList = ({ item }) => {
 
     const { removeItem, updateCantCart } = useContext(CartContext);
         const [cantidad, setCantidad] = useState(item.quantity);
@@ -42,4 +42,4 @@ const CartPrueba = ({ item }) => {
     )
 }
 
-export default CartPrueba
+export default CartList
