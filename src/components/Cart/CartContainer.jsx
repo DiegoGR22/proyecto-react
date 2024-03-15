@@ -4,7 +4,7 @@ import { useContext } from "react";
 import { CartContext } from "../Context/CartContext";
 import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import CartPrueba from "./CartPrueba";
+import CartList from "./CartList";
 
 const CartContainer = () => {
 
@@ -15,7 +15,7 @@ const CartContainer = () => {
             {
                 cart.map((item) => (
                     <div key={item.id}>
-                        <CartPrueba item={item}/>
+                        <CartList item={item}/>
                     </div>
                 ))
             }
