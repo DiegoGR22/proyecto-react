@@ -21,19 +21,32 @@ const CartProvider = ({ children }) => {
         }
     }
 
-    function addItemFast(item, quantity) {
+    function addItemFast(item, quantity, stock) {
         const itemExists = isInCart(item.id);
     
         if (itemExists) {
+            const updatedQuantity = cart.find((cartItem) => cartItem.id === item.id).quantity + quantity;
+            
+            if (updatedQuantity > stock) {
+                alert("La cantidad total en el carrito supera el stock disponible.");
+                return;
+            }
+    
             const updatedCart = cart.map((cartItem) =>
-                cartItem.id === item.id ? { ...cartItem, quantity: cartItem.quantity + quantity } : cartItem
+                cartItem.id === item.id ? { ...cartItem, quantity: updatedQuantity } : cartItem
             );
             setCart(updatedCart);
         } else {
+            if (quantity > stock) {
+                alert("La cantidad solicitada supera el stock disponible.");
+                return;
+            }
+    
             const itemAgregado = { ...item, quantity };
             setCart([...cart, itemAgregado]);
         }
     }
+    
     
     
     function removeItem(itemId) {

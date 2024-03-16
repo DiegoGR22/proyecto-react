@@ -24,7 +24,7 @@ const Item = ({ producto }) => {
                         <Button variant="primary">
                             <Link to={`/item/${producto.id}`}>Ver detalles</Link>
                         </Button>
-                        <Button onClick={() => addItemFast(producto, 1)}><PiShoppingCartSimpleDuotone className="PiShoppingCartSimpleDuotone"/></Button>
+                        <Button onClick={() => addItemFast(producto, 1, producto.stock)}><PiShoppingCartSimpleDuotone className="PiShoppingCartSimpleDuotone"/></Button>
                     </Card.Body>
                 </Card>
             </Col>
