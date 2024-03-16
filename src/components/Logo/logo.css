@@ -3,3 +3,9 @@ img{
     height: 100px;
     transform: scale(1.7);
 }
+
+@media (max-width: 968px) {
+    img {
+        transform: scale(1.2);
+    }
+}
