@@ -20,6 +20,20 @@ const CartProvider = ({ children }) => {
             setCart([...cart, itemAgregado]);
         }
     }
+
+    function addItemFast(item, quantity) {
+        const itemExists = isInCart(item.id);
+    
+        if (itemExists) {
+            const updatedCart = cart.map((cartItem) =>
+                cartItem.id === item.id ? { ...cartItem, quantity: cartItem.quantity + quantity } : cartItem
+            );
+            setCart(updatedCart);
+        } else {
+            const itemAgregado = { ...item, quantity };
+            setCart([...cart, itemAgregado]);
+        }
+    }
     
     
     function removeItem(itemId) {
@@ -53,7 +67,7 @@ const CartProvider = ({ children }) => {
 
     return (
         <>
-            <CartContext.Provider value={{cart, addItem, removeItem, clearAll, isInCart, cartQuantity, totalPrice, updateCantCart}}>{children}</CartContext.Provider>
+            <CartContext.Provider value={{cart, addItem, removeItem, clearAll, isInCart, cartQuantity, totalPrice, updateCantCart, addItemFast}}>{children}</CartContext.Provider>
         </>
     )
 }
