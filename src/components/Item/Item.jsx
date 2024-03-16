@@ -3,7 +3,6 @@
 import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
-import Row from 'react-bootstrap/Row';
 import { Link } from 'react-router-dom';
 import { PiShoppingCartSimpleDuotone } from "react-icons/pi";
 import { useContext } from 'react';
@@ -14,21 +13,23 @@ const Item = ({ producto }) => {
     const { addItemFast } = useContext(CartContext)
 
     return (
-        <Row xs={1} md={3} className="g-4 justify-content-center align-items-center">
-            <Col key={producto.id} className="col">
-                <Card style={{ width: '20rem', overflow: 'hidden', margin: '0' }}>
-                    <Card.Img variant="top" src={producto.image} style={{ width: '100%' }} />
-                    <Card.Body>
-                        <Card.Title>{producto.model}</Card.Title>
+        <Col key={producto.id} className="col">
+            <Card style={{ height: '430px', width: '18rem', overflow: 'hidden' }}>
+                <Card.Img className='mb-0' src={producto.image} style={{ height: '200px', transform: 'none' }} />
+                <hr className='m-0' />  
+                <Card.Body className='p-0'>
+                    <div className='p-2 text-center'>
+                        <Card.Title className='pt-2 text-uppercase fw-bold'>{producto.model}</Card.Title>
                         <Card.Text>{producto.description}</Card.Text>
-                        <Button variant="primary">
-                            <Link to={`/item/${producto.id}`}>Ver detalles</Link>
-                        </Button>
-                        <Button onClick={() => addItemFast(producto, 1, producto.stock)}><PiShoppingCartSimpleDuotone className="PiShoppingCartSimpleDuotone"/></Button>
-                    </Card.Body>
-                </Card>
-            </Col>
-        </Row>
+                            <Button className='mx-2' variant="outline-primary">
+                                <Link to={`/item/${producto.id}`}>Ver detalles</Link>
+                            </Button>
+                            <Button onClick={() => addItemFast(producto, 1, producto.stock)}><PiShoppingCartSimpleDuotone style={{width: '30px', padding: '3px'}} className="PiShoppingCartSimpleDuotone" /></Button>
+                    </div>
+                    <Card.Footer className='text-center'>Stock: {producto.stock}</Card.Footer>
+                </Card.Body>
+            </Card>
+        </Col>
     );
 };
 

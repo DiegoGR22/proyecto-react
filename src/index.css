@@ -15,9 +15,10 @@
 a {
   font-size: 20px;
   font-weight: 500;
-  color: black;
+  color: inherit;
   text-decoration: inherit;
 }
-a:hover {
-  color: rgb(216, 58, 50);
+
+.active{
+  font-weight: 600; 
 }

@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import ItemList from '../ItemList/ItemList';
 import { useParams } from 'react-router-dom';
 import { collection, getDocs, getFirestore, query, where, orderBy } from 'firebase/firestore';
+import LoadSpinner from '../LoadSpinner/LoadSpinner';
 
 const ItemListContainer = () => {
     const [productos, setProductos] = useState([]);
@@ -57,7 +58,7 @@ const ItemListContainer = () => {
             console.log(productos);
             setProductos(productos);
         })
-        .finally(() => setLoading(false))
+            .finally(() => setLoading(false))
     }
 
     // useEffect(() => {
@@ -86,7 +87,7 @@ const ItemListContainer = () => {
         const db = getFirestore();
 
         // const productoRef = query(collection(db, "productos"), orderBy("id", "asc"), where("category", "==", category));
-        const productoRef = query(collection(db, "productos") , where("category", "==", category));
+        const productoRef = query(collection(db, "productos"), where("category", "==", category));
 
         getDocs(productoRef).then((collection) => {
             const productos = collection.docs.map((doc) => {
@@ -95,13 +96,16 @@ const ItemListContainer = () => {
             console.log(productos);
             setProductos(productos);
         })
-        .finally(() => setLoading(false))
+            .finally(() => setLoading(false))
     }
 
     return (
         <>
             {
-                loading ? <p>Loading...</p> :
+                // loading ? <p>Loading...</p> :
+                loading ?
+                    <LoadSpinner />
+                    :
                     < ItemList productos={productos} />
             }
         </>
