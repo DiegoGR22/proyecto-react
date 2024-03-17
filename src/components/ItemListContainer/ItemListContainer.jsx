@@ -38,7 +38,9 @@ const ItemListContainer = () => {
 
     useEffect(() => {
         if (!category) {
-            pedirDatosFirestore()
+            setTimeout(() => {
+                pedirDatosFirestore()
+            }, 1000);
         } else {
             setTimeout(() => {
                 filterCategoryFirestore(category);
