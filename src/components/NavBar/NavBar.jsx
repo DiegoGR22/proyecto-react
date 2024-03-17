@@ -30,7 +30,8 @@ function NavBar() {
             </NavDropdown>
           </Nav>
           <Nav>
-            <NavLink to={"/cart/"} className={"nav-link"}><Cart /><strong>{cartQuantity()}</strong></NavLink>
+            <NavLink to={"/cart/"} className={"nav-link"}><Cart /></NavLink>
+            <NavLink to={"/cart/"} className={"nav-link"}><strong className='fs-5'>{cartQuantity()}</strong></NavLink>
           </Nav>
         </Navbar.Collapse>
       </Container>
