@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import ProductosJSON from '../../db/productos.json';
 import ItemDetail from '../ItemDetail/ItemDetail';
+import LoadSpinner from '../LoadSpinner/LoadSpinner';
 // import { getDoc, doc, getFirestore } from 'firebase/firestore';
 // import { db } from "../firebase/config";
 
@@ -27,7 +28,7 @@ const ItemDetailContainer = () => {
         return new Promise((resolve) => {
             setTimeout(() => {
                 resolve(ProductosJSON.find((item) => item.id === parseInt(id)));
-            }, 2000);
+            }, 1000);
         });
     } 
 
@@ -48,7 +49,9 @@ const ItemDetailContainer = () => {
 return (
     <>
         {
-            loading ? <p>Loading...</p> :
+            loading ? 
+                <LoadSpinner/>
+            :
                 <ItemDetail item={item} />
         }
     </>
