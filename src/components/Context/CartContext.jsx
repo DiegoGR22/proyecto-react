@@ -1,5 +1,7 @@
 /* eslint-disable react/prop-types */
 import { createContext, useState } from "react"
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export const CartContext = createContext([]);
 
@@ -9,7 +11,7 @@ const CartProvider = ({ children }) => {
 
     function addItem(item, quantity) {
         const itemExists = isInCart(item.id);
-    
+
         if (itemExists) {
             const updatedCart = cart.map((cartItem) =>
                 cartItem.id === item.id ? { ...cartItem, quantity: cartItem.quantity + quantity } : cartItem
@@ -23,32 +25,27 @@ const CartProvider = ({ children }) => {
 
     function addItemFast(item, quantity, stock) {
         const itemExists = isInCart(item.id);
-    
+
         if (itemExists) {
             const updatedQuantity = cart.find((cartItem) => cartItem.id === item.id).quantity + quantity;
-            
+
             if (updatedQuantity > stock) {
-                alert("La cantidad total en el carrito supera el stock disponible.");
+                toast.error("La cantidad total en el carrito supera el stock disponible.")
                 return;
             }
-    
+
             const updatedCart = cart.map((cartItem) =>
                 cartItem.id === item.id ? { ...cartItem, quantity: updatedQuantity } : cartItem
             );
             setCart(updatedCart);
-        } else {
-            if (quantity > stock) {
-                alert("La cantidad solicitada supera el stock disponible.");
-                return;
-            }
-    
+        } 
+        else {
             const itemAgregado = { ...item, quantity };
             setCart([...cart, itemAgregado]);
         }
     }
-    
-    
-    
+
+
     function removeItem(itemId) {
         const updatedCart = cart.filter((item) => item.id !== itemId);
         setCart(updatedCart);
@@ -76,11 +73,23 @@ const CartProvider = ({ children }) => {
         );
         setCart(newCart);
     };
-    
+
 
     return (
         <>
-            <CartContext.Provider value={{cart, addItem, removeItem, clearAll, isInCart, cartQuantity, totalPrice, updateCantCart, addItemFast}}>{children}</CartContext.Provider>
+            <CartContext.Provider value={{ cart, addItem, removeItem, clearAll, isInCart, cartQuantity, totalPrice, updateCantCart, addItemFast }}>{children}</CartContext.Provider>
+            <ToastContainer
+                position="top-right"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="colored"  
+            />
         </>
     )
 }
