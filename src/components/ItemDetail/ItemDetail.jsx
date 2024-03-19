@@ -14,12 +14,16 @@ import { faStar, faStarHalfStroke, faHeart } from '@fortawesome/free-solid-svg-i
 
 const ItemDetail = ({ item }) => {
 
-    const { cart, addItem } = useContext(CartContext);
+    const { cart, addItem, getRandomInt } = useContext(CartContext);
 
     const [itemCount, setItemCount] = useState(1);
     const [isAdded, setIsAdded] = useState(false);
 
     const [isLiked, setIsLiked] = useState(false);
+
+    const [reviewCount, setReviewCount] = useState(getRandomInt(10, 50));
+    const [percentageCount, setPercentageCount] = useState(getRandomInt(87, 98));
+    const [voteCount, setVoteCount] = useState(getRandomInt(40, 90));
 
     const handleLikeClick = () => {
         setIsLiked(!isLiked);
@@ -28,10 +32,6 @@ const ItemDetail = ({ item }) => {
     const onAdd = (quantity) => {
         setItemCount(quantity);
         setIsAdded(true);
-    }
-
-    function getRandomInt(min, max) {
-        return Math.floor(Math.random() * (max - min) + min);
     }
 
     return (
@@ -100,12 +100,13 @@ const ItemDetail = ({ item }) => {
                                     </Link>
                                 </div>
                                 <div>
-                                    <Link className="review-no">{getRandomInt(10,50)} reviews</Link>
+                                    {/* <Link className="review-no">{getRandomInt(10,50)} reviews</Link> */}
+                                    <Link className="review-no">{reviewCount} reviews</Link>
                                 </div>
                             </div>
                             <p className="product-description">{item.description}</p>
                             <h4 className="price">PRICE: <span>${item.price}.00</span></h4>
-                            <p className="vote"><strong>{getRandomInt(87,98)}%</strong> of buyers enjoyed this product! <strong><Link style={{textDecoration: 'underline'}} className='fw-bold'>({getRandomInt(40,90)} votes)</Link></strong></p>
+                            <p className="vote"><strong>{percentageCount}%</strong> of buyers enjoyed this product! <strong><Link style={{textDecoration: 'underline'}} className='fw-bold'>({voteCount} votes)</Link></strong></p>
                             <Form>
                                 <Form.Group controlId="SizeForm">
                                     <Form.Label>Sizes:</Form.Label>
