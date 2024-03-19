@@ -2,6 +2,7 @@
 import { createContext, useState } from "react"
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import "./CartContext.css"
 
 export const CartContext = createContext([]);
 
@@ -88,7 +89,7 @@ const CartProvider = ({ children }) => {
                 pauseOnFocusLoss
                 draggable
                 pauseOnHover
-                theme="colored"  
+                theme="colored"
             />
         </>
     )
