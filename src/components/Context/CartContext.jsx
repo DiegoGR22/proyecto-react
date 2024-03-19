@@ -75,10 +75,14 @@ const CartProvider = ({ children }) => {
         setCart(newCart);
     };
 
+    const getRandomInt = (min, max) =>  {
+        return Math.floor(Math.random() * (max - min) + min);
+    }
+
 
     return (
         <>
-            <CartContext.Provider value={{ cart, addItem, removeItem, clearAll, isInCart, cartQuantity, totalPrice, updateCantCart, addItemFast }}>{children}</CartContext.Provider>
+            <CartContext.Provider value={{ cart, addItem, removeItem, clearAll, isInCart, cartQuantity, totalPrice, updateCantCart, addItemFast, getRandomInt }}>{children}</CartContext.Provider>
             <ToastContainer
                 position="top-right"
                 autoClose={5000}
