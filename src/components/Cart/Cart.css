@@ -1,3 +1,7 @@
+.Toastify__toast--success {
+    --toastify-color-success: #065313;
+}
+
 .PiShoppingCartSimpleDuotone{
     transform: scale(2.5);
 }
@@ -25,7 +29,28 @@
 
 @media (min-width: 768px) {
     .prueba{
-        width: 60%;
+        width: 70%;
         height: auto;
     }
+}
+
+.icon-link-hover .icon {
+    transition: transform 0.3s ease;
+}
+
+.icon-link-hover:hover .icon {
+    transform: translateX(-5px);
+    color: #389cc3;
+}
+
+.icon-link-hover:hover{
+    color: #389cc3;
+}
+
+.icon-link-hover-empty .icon-empty {
+    transition: transform 0.3s ease;
+}
+
+.icon-link-hover-empty:hover .icon-empty {
+    transform: translateX(-5px);
 }
