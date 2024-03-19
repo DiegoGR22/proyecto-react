@@ -1,4 +1,5 @@
 /* eslint-disable react/prop-types */
+/* eslint-disable no-unused-vars */
 // import React from 'react'
 import { useContext, useState } from "react";
 import { CartContext } from "../Context/CartContext";
@@ -12,6 +13,7 @@ const CartList = ({ item }) => {
 
     const { removeItem, updateCantCart, getRandomInt } = useContext(CartContext);
     const [cantidad, setCantidad] = useState(item.quantity);
+    const [sizeCount, setSizeCount] = useState(getRandomInt(25, 28));
 
     const handleRestar = (item) => {
         if (cantidad > 1) {
@@ -42,7 +44,7 @@ const CartList = ({ item }) => {
                             </Col>
                             <Col md={3} lg={3} xl={3} className="col-responsive">
                                 <p className="lead fw-bold mb-2 text-uppercase">{item.model}</p>
-                                <p><span className="text-muted">Size: </span><b>{getRandomInt(25, 28)}</b></p>
+                                <p><span className="text-muted">Size: </span><b>{sizeCount}</b></p>
                             </Col>
                             <Col md={3} lg={3} xl={2} className="d-flex justify-content-center">
                                 <ButtonGroup>
