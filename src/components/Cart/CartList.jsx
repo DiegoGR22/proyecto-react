@@ -2,12 +2,16 @@
 // import React from 'react'
 import { useContext, useState } from "react";
 import { CartContext } from "../Context/CartContext";
-import { Button } from "react-bootstrap";
+import { Button, ButtonGroup, Image, Col, Row, Card } from "react-bootstrap";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTrash } from '@fortawesome/free-solid-svg-icons';
+import { Link } from "react-router-dom";
+import "./Cart.css";
 
 const CartList = ({ item }) => {
 
-    const { removeItem, updateCantCart } = useContext(CartContext);
-        const [cantidad, setCantidad] = useState(item.quantity);
+    const { removeItem, updateCantCart, getRandomInt } = useContext(CartContext);
+    const [cantidad, setCantidad] = useState(item.quantity);
 
     const handleRestar = (item) => {
         if (cantidad > 1) {
@@ -16,7 +20,7 @@ const CartList = ({ item }) => {
             setCantidad(newCantidad);
         }
     }
-    
+
     const handleSumar = (item) => {
         if (cantidad < item.stock) {
             const newCantidad = cantidad + 1;
@@ -26,19 +30,38 @@ const CartList = ({ item }) => {
     }
 
     return (
-        <div>
+        <>
             <div key={item.id}>
-                <h3>{item.brand} {item.model}</h3>
-                {/* <img src={item.image} alt="" /> */}
-                <p>Precio unitario: $ {item.price}</p>
-                <p>Cantidad: {item.quantity}</p>
-                <p>Subtotal: ${item.price * item.quantity}</p>
-                <Button variant='secondary' onClick={() => handleRestar(item)}> - </Button>{' '}
-                <span>{item.quantity}</span>{' '}
-                <Button variant='secondary' onClick={() => handleSumar(item)}> + </Button>{' '}
-                <Button onClick={() => removeItem(item.id)}>Quitar</Button>
+                <Card className="rounded-3 mb-4">
+                    <Card.Body className="p-4">
+                        <Row className="d-flex justify-content-between align-items-center">
+                            <Col md={2} lg={2} xl={2} className="col-responsive">
+                                <Link to={`/item/${item.id}`} className="col-md-2 col-lg-2 col-xl-2">
+                                    <Image style={{ cursor: 'pointer', transform: 'none' }} src={item.image} className="rounded-3" alt="Cart-Item" fluid />
+                                </Link>
+                            </Col>
+                            <Col md={3} lg={3} xl={3} className="col-responsive">
+                                <p className="lead fw-bold mb-2 text-uppercase">{item.model}</p>
+                                <p><span className="text-muted">Size: </span><b>{getRandomInt(25, 28)}</b></p>
+                            </Col>
+                            <Col md={3} lg={3} xl={2} className="d-flex justify-content-center">
+                                <ButtonGroup>
+                                    <Button variant='secondary' onClick={() => handleRestar(item)}> - </Button>{' '}
+                                    <Button variant='outline-secondary' disabled><b>{item.quantity}</b></Button>
+                                    <Button variant='secondary' onClick={() => handleSumar(item)}> + </Button>{' '}
+                                </ButtonGroup>
+                            </Col>
+                            <Col md={3} lg={2} xl={2} offset-lg={1} className="col-responsive total-price">
+                                <h5 className="mb-0 fw-bold">${item.price * item.quantity}.00</h5>
+                            </Col>
+                            <Col md={1} lg={1} xl={1} className="text-center">
+                                <FontAwesomeIcon className="fs-4 trash" icon={faTrash} onClick={() => removeItem(item.id)} />
+                            </Col>
+                        </Row>
+                    </Card.Body>
+                </Card>
             </div>
-        </div>
+        </>
     )
 }
 

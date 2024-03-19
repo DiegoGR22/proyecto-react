@@ -1,3 +1,24 @@
 .PiShoppingCartSimpleDuotone{
     transform: scale(2.5);
 }
+
+.trash{
+    cursor: pointer; 
+    color: #931515;
+}
+
+.trash:hover{
+    color: rgb(211, 14, 14) ;
+}
+
+@media (max-width: 767px) {
+    .col-responsive{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .total-price{
+        margin: 25px 0px;
+    }
+}
