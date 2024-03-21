@@ -1,11 +1,12 @@
 /* eslint-disable no-unused-vars */
 
 import { collection, getFirestore, addDoc, serverTimestamp } from 'firebase/firestore';
-import { Button, Row, Col, Form, Card } from 'react-bootstrap';
+import { Button, Row, Col, Form, Card, Container } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
 import { useContext, useState } from 'react';
 import { CartContext } from '../Context/CartContext';
 import { Link } from 'react-router-dom';
+import "./Checkout.css";
 
 const Checkout = () => {
 
@@ -52,13 +53,17 @@ const Checkout = () => {
             {
                 isPaid ?
 
-                    <div className='containerCheckout'>
-                        <h2>Gracias por tu compra!</h2>
-                        <p>Tu numero de orden es: {orderId}</p>
-                        <Button>
-                            <Link to={"/"}>Volver a la Tienda</Link>
-                        </Button>
-                    </div>
+                    <Container className='checkout-container'>
+                        <Row className="justify-content-center">
+                            <Col md={8} className="text-center">
+                                <h2 className='mb-4'>¡Gracias por tu compra!</h2>
+                                <p className='mb-4'>Tu número de orden es: <strong>{orderId}</strong></p>
+                                <Button variant="success">
+                                    <Link to={"/"} className="return-link">Volver a la Tienda</Link>
+                                </Button>
+                            </Col>
+                        </Row>
+                    </Container>
 
                     :
                     <div className='containerCheckout'>
@@ -152,7 +157,8 @@ const Checkout = () => {
                                                                     if (value.length < 10) {
                                                                         return "El teléfono debe tener al menos 10 dígitos.";
                                                                     }
-                                                                    return true;}
+                                                                    return true;
+                                                                }
                                                             })}
                                                                 maxLength={10} onInput={(e) => {
                                                                     if (e.target.value.length > 10) {
