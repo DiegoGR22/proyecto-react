@@ -20,6 +20,8 @@
 - **React Router DOM**: Se utiliza para el enrutamiento en la aplicación, permitiendo la navegación entre diferentes páginas de manera dinámica.
 - **Firebase Firestore**: Se utiliza para almacenar y gestionar la información de los productos de la tienda en una base de datos en la nube.
 - **React Bootstrap**: Se utiliza para el diseño y la apariencia de los componentes de la interfaz de usuario, facilitando la creación de una experiencia visualmente atractiva.
+- **React Hook Form**: Se utiliza para el manejo de formularios, proporcionando un enfoque sencillo y eficiente para la validación y control de formularios en React.
+- **Font Awesome**: Se utiliza para agregar iconos de forma fácil y rápida a la interfaz de usuario, mejorando la experiencia visual y la usabilidad.
 
 ## Instalación
 
@@ -34,7 +36,7 @@ Si deseas contribuir a este proyecto, ¡siéntete libre de hacer un pull request
 
 ## Autor
 
-SneakHeaven fue creado por **Diego Guerrero**. Si tienes alguna pregunta o sugerencia, no dudes en contactarnos en https://github.com/DiegoGR22.
+SneakHeaven fue creado por **Diego Guerrero**. Si tienes alguna pregunta o sugerencia, no dudes en contactarnos en [GitHub](https://github.com/DiegoGR22).
 
 ¡Gracias por visitar SneakHeaven!
 
@@ -42,4 +44,4 @@ SneakHeaven fue creado por **Diego Guerrero**. Si tienes alguna pregunta o suger
 
 ## Deploy
 
-https://proyecto-react-26zemri2e-diego-guerreros-projects.vercel.app/
+Puedes visitar la tienda en línea de SneakHeaven en [este enlace](https://proyecto-react-26zemri2e-diego-guerreros-projects.vercel.app/).
