@@ -44,4 +44,4 @@ SneakHeaven fue creado por **Diego Guerrero**. Si tienes alguna pregunta o suger
 
 ## Deploy
 
-Puedes visitar la tienda en línea de SneakHeaven en [este enlace](https://proyecto-react-26zemri2e-diego-guerreros-projects.vercel.app/).
+Puedes visitar la tienda en línea de SneakHeaven en [este enlace](https://proyecto-react-19t0jnrz7-diego-guerreros-projects.vercel.app).
